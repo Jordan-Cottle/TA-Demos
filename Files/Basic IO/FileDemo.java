@@ -13,7 +13,6 @@ public class FileDemo
     public static void main(String[] args) throws FileNotFoundException{
         File file = new File("FileDemo.java");
         
-        
         Scanner fileReader;
         fileReader = new Scanner(file);
         
