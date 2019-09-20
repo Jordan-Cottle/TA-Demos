@@ -1,0 +1,34 @@
+import java.io.File;
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+/**
+ * A program that prints out its own source code
+ *
+ * @author Jordan Cottle
+ * @version 9/18/2019
+ */
+public class FileDemo
+{
+    public static void main(String[] args) throws FileNotFoundException{
+        File file = new File("FileDemo.java");
+        
+        
+        Scanner fileReader;
+        fileReader = new Scanner(file);
+        
+        File output = new File("Output.txt");
+        PrintWriter writer = new PrintWriter(output);
+        
+        while(fileReader.hasNext()){
+            String line = fileReader.nextLine();
+            System.out.println(line);
+            writer.println(line);
+        }
+        
+        System.out.println("Goodbye");
+        
+        fileReader.close();
+        writer.close();
+    }
+}

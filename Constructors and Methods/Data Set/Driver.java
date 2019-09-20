@@ -12,7 +12,7 @@ public class Driver
     
     public static void main(String[] args){    
         DataSet data = makeDataSet(COUNT);
-        System.out.println(data.getTotal());
+        System.out.println("Total of the DataSet is: " + data.getTotal());
     }
     
     /**

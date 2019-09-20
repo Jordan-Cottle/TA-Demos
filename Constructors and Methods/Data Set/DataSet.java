@@ -53,7 +53,4 @@ public class DataSet
     public double calculateMean(){
         return getTotal() / numbers.length;
     }
-    
-    
-    
 }
