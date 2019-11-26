@@ -38,7 +38,7 @@ public class Driver{
         // Get a name for the hero
         System.out.print("Enter your name: ");
         String name = in.nextLine();
-        in.close();
+        
 
         // Create the hero
         Hero hero = new Hero(name, 100, 10, 3);
@@ -48,7 +48,7 @@ public class Driver{
 
         // Battle each enemy in the sequence
         for(int i = 0; i < enemies.length; i++){
-            System.out.printf("%s approaches!", enemies[i].toString());
+            System.out.printf("%s approaches!\n", enemies[i].toString());
             hero.battle(enemies[i]);
 
             if(!hero.alive()){
@@ -62,6 +62,7 @@ public class Driver{
         System.out.println("You weren't supposed to make it this far...");
         
         // Unless a clever player modifies the enemy data file....
+        in.close();
     }
 
     /**
