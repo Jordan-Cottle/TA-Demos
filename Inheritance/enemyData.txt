@@ -1,0 +1,4 @@
+Goblin 10 1 0
+Orc 25 3 1
+Ogre 50 7 3
+Dragon 200 25 8
