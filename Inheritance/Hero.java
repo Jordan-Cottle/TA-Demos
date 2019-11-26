@@ -17,6 +17,7 @@ public class Hero extends Fighter{
     }
 
     protected int makeDecision(){
+        System.out.println(this);
         System.out.println("1: Attack");
         System.out.println("2: Defend");
 
