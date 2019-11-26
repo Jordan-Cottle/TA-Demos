@@ -50,6 +50,9 @@ public abstract class Fighter{
         System.out.printf("%s vs %s\n", this.name, other.name);
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 
+        this.target = other;
+        other.target = this;
+
         int count = 1;
         while(this.alive() && other.alive()){
             System.out.println("Round " + count++);
@@ -100,7 +103,7 @@ public abstract class Fighter{
         int dmg = this.attack - other.getDefense();
 
         // If attack fails, apply stun and return without doing damage
-        if(dmg < 0){
+        if(dmg <= 0){
             System.out.println("The attack has no effect!");
             System.out.println(name + " is now stunned!");
             this.stunned = true;
