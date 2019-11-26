@@ -134,7 +134,7 @@ public abstract class Fighter{
      * Expected values are enumerated above in the ATTACK and DEFEND constants.
      * @return One of the defined constants Fighter.ATTACK or Fighter.DEFEND
      */
-    public abstract int makeDecision();
+    protected abstract int makeDecision();
 
     /**
      * Helper function to handle performing actions based on the choice provided by the abstract method.
