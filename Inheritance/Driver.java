@@ -10,6 +10,8 @@ public class Driver{
         String fileName = "enemyData.txt";
         File data = new File(fileName);
 
+
+        // Attempt to open file with Scanner
         Scanner dataReader;
         try{
             dataReader = new Scanner(data);
@@ -19,27 +21,28 @@ public class Driver{
             return;
         }
 
+        // Create String array with a space for each line in the file
         enemyData = new String[countLines(fileName)];
 
+        // Load file data into array
         for(int i = 0; i < enemyData.length; i++){
             enemyData[i] = dataReader.nextLine();
         }
+
+        // Remember to close those Scanners when you're done!!
         dataReader.close();
 
         // Next build an array of enemies from the data
         Enemy[] enemies = new Enemy[enemyData.length];
-
         for(int i = 0; i < enemies.length; i++){
             enemies[i] = buildEnemy(i);
         }
 
-        Scanner in = new Scanner(System.in);
-
         // Get a name for the hero
+        Scanner in = new Scanner(System.in);
         System.out.print("Enter your name: ");
         String name = in.nextLine();
         
-
         // Create the hero
         Hero hero = new Hero(name, 100, 10, 3);
 
@@ -53,6 +56,7 @@ public class Driver{
 
             if(!hero.alive()){
                 System.out.println("You have been defeated!");
+                in.close();
                 return;
             }
         }
